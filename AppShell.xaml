@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+    <!--Главная оболочка приложения-->
 <Shell
     x:Class="Calculator.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Calculator"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
 
+    <!--Переопределение выдвигающейся панели-->
+    <Shell.FlyoutContentTemplate>
+        <DataTemplate>
+            <Grid  BackgroundColor="{AppThemeBinding Light=#f2f2f2, Dark=#0a0a0a}">
+                
+                <!--Лейбл-->
+                    <Label Text="Настройки" Margin="20,30,0,0" TextColor="{AppThemeBinding Light=black, Dark=white}" FontSize="24"
+                        FontFamily="semiBold"/>
+                
+                <!--Пункт меню-->
+                <Grid VerticalOptions="Start" Margin="20,70,15,0">
+                    <Label Text="Тёмная тема" VerticalOptions="Center" FontSize="16"
+                            FontFamily="medium"/>
+                    <Switch IsToggled="false" VerticalOptions="Center"
+                            Toggled="Switch_Toggled" x:Name="toggle" Loaded="toggle_Loaded"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutContentTemplate>
+
+    <!--Вкладки нижней панели-->
     <TabBar>
         <Tab Title="Физика"
-           >
+           Icon="{AppThemeBinding Dark=physic_w, Light=physic_b}">
             <ShellContent ContentTemplate="{DataTemplate local:Phys}" />
         </Tab>
         <Tab Title="Алгебра"
-           >
+           Icon="{AppThemeBinding Dark=algebra_w, Light=algebra_b}">
             <ShellContent ContentTemplate="{DataTemplate local:Algebra}" />
         </Tab>
         <Tab Title="Геометрия"
-   >
+            Icon="{AppThemeBinding Dark=geometry_w, Light=geometry_b}">
             <ShellContent ContentTemplate="{DataTemplate local:Geometry}" />
         </Tab>
     </TabBar>

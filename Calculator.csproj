@@ -82,7 +82,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -94,12 +93,25 @@
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\appiconfg.png" />
 	  <None Remove="Resources\AppIcon\appiconfg.svg" />
+	  <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+	  <None Remove="Resources\Images\algebra_b.png" />
+	  <None Remove="Resources\Images\algebra_w.png" />
+	  <None Remove="Resources\Images\arrow.svg" />
+	  <None Remove="Resources\Images\geometry_b.png" />
+	  <None Remove="Resources\Images\geometry_w.png" />
+	  <None Remove="Resources\Images\logo_b.svg" />
+	  <None Remove="Resources\Images\logo_w.svg" />
+	  <None Remove="Resources\Images\physic_b.png" />
+	  <None Remove="Resources\Images\physic_w.png" />
 	  <None Remove="Resources\splash.svg" />
 	  <None Remove="Resources\Splash\splash.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" ForegroundScale="0.5"/>
+	  <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" ForegroundScale="0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -124,6 +136,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Phys.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="WelocmeScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

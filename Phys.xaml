@@ -2,16 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.Phys"
-             Title="Физика"
-             >
+             Title="Физика">
+    <!--Главный список отображений-->
     <CollectionView ItemsSource="{Binding Formules}"
                     SelectionMode="Single"
                     BackgroundColor="{AppThemeBinding Light=#f2f2f2, Dark=#0a0a0a}"
                     SelectionChanged="CollectionView_SelectionChanged">
+        
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Label Text="{Binding .}" FontSize="20" Margin="20,10,0,10" TextColor="{AppThemeBinding Dark=white, Light=black}"
-                       />
+                
+                <VerticalStackLayout Margin="20,15,20,15" Spacing="5">
+                    <!--Имя формулы-->
+                    <Label Text="{Binding Name}" FontSize="18" TextColor="{AppThemeBinding Dark=white, Light=black}"
+                       FontFamily="medium" Opacity="0.8"/>
+                    <!--Формула-->
+                    <Label Text="{Binding Value}" FontSize="20" TextColor="{AppThemeBinding Dark=white, Light=black}"
+                       FontFamily="semiBold" FontAttributes="Bold"/>
+                </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

@@ -7,13 +7,16 @@ namespace Calculator
     {
         public static MauiApp CreateMauiApp()
         {
+            //Подлючение шрифтов, настройка и инициализация небходимых данных платформы
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>().UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Montserrat-Medium.ttf", "medium");
+                    fonts.AddFont("Montserrat-Regular.ttf", "regular");
+                    fonts.AddFont("Montserrat-SemiBold.ttf", "semiBold");
+                    fonts.AddFont("Montserrat-Bold.ttf", "bold");
                 });
 
 #if DEBUG

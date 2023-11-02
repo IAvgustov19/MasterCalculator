@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.WelocmeScreen"
+             Title="WelocmeScreen">
+    
+    <Grid BackgroundColor="{AppThemeBinding Light=#f2f2f2, Dark=#0a0a0a}">
+        <!--Лого приложения-->
+        <Image Source="{AppThemeBinding Light=logo_w,Dark=logo_b}" HeightRequest="150"
+               HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,200"/>
+        
+        <!--Имя-->
+        <Label 
+            Text="Master Calculator"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="30"
+            TextColor="#6347c9"
+            Margin="0,50,0,0"
+             FontFamily="bold" />
+        
+        <!--Вводный текст-->
+        <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="15,130,15,0"
+               HorizontalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Ваш незаменимый помощник в "  FontFamily="medium" TextColor="{AppThemeBinding Dark=white, Light=black}"/>
+                    <Span Text="учёбе" TextColor="#6347c9"  FontFamily="medium" />
+                    <Span Text=" и "  FontFamily="medium" TextColor="{AppThemeBinding Dark=white, Light=black}"/>
+                    <Span Text="повседневной жизни" TextColor="#6347c9"  FontFamily="medium" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
+        <!--Стек-->
+        <HorizontalStackLayout VerticalOptions="End" HorizontalOptions="Center" 
+                               Margin="0,0,0,30" Spacing="10">
+            
+            <!--Нажимаемый текск-->
+            <Label Text="Начать" FontSize="18"  FontFamily="medium" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <!--стрелка-->
+            <Image Source="arrow"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

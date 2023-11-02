@@ -6,7 +6,8 @@
 
     <Grid x:Name="grid">
         <VerticalStackLayout HorizontalOptions="Center" Margin="15,30" Spacing="15" x:Name="stack"/>
-        <Button Text="Решить" VerticalOptions="End" Margin="30" CornerRadius="10" x:Name="button" Clicked="button_Clicked"/>
+        <Button Text="Решить" VerticalOptions="End" Margin="30" CornerRadius="10" x:Name="button" Clicked="button_Clicked"
+                FontFamily="medium"/>
     </Grid>
 
 </ContentPage>
